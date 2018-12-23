@@ -3,3 +3,4 @@ git study
 
 동기화 연습
 >>local1에서 내용추가
+>>local2에서 내용추가
