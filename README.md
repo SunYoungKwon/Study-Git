@@ -23,11 +23,11 @@ git status
   + Changes not staged for commit: commit되지 않을 것
 ## log
 ```
-git log   // 현재까지 commit한 내용 출력
-git log -p   // 각 commit사이의 소스코드상의 변경사항을 함께 출력
-git log diff commitID1..commitID2   // commitID1과 commitID2사이의 변경사항 출력
-git log --branch   // 모든 브랜치를 표현
-git log --graph   // 그래프로 표현 
+git log                              // 현재까지 commit한 내용 출력
+git log -p                           // 각 commit사이의 소스코드상의 변경사항을 함께 출력
+git log diff commitID1..commitID2    // commitID1과 commitID2사이의 변경사항 출력
+git log --branch                     // 모든 브랜치를 표현
+git log --graph                      // 그래프로 표현 
 ```
 ## add
 #### 파일을 add하기
@@ -44,13 +44,13 @@ git reset 'File'
 #### commit하기
 ```
 git commit
-git commit -a   // 수정하거나 삭제한 파일을 자동으로 add하고 commit
+git commit -a                    // 수정하거나 삭제한 파일을 자동으로 add하고 commit
 git commit -m 'commit message'   // 에디처를 거치지않고 바로 commit메세지 작성
 ```
 #### commit 취소 하기
 ```
 git reset 버전아이디 --hard   // 작성한 commit아이디 상태로 돌아가고 그 이후의 버전은 버림
-git revert 버전아이디   // 버전아이디 커밋을 취소한 내용을 새로운 버전으로 만듦
+git revert 버전아이디         // 버전아이디 커밋을 취소한 내용을 새로운 버전으로 만듦
 * push후에는 commit내용을 건드리지 말 것
 ```
 ## push
@@ -101,16 +101,15 @@ gir merge branch2       // branch2를 branch1(현재 위치한 브랜치)에 mer
 >>>>>>> branch   // merge하려던 브랜치
 ```
 4. git add '충돌파일명'
-## merge
 ## etc
 ```
-pwd   // 현재 나의 위치
-mkdir 폴더명   // 현재 위치에 새로운 폴더 생성
-cp file1 file2   // file1과 같은 내용의 fil12를 생성(확장자 쓰기)
-git   // 사용할 수 있는 명령어 표시
-ls -al   // 현재 디렉토리의 파일 목록 출력
+pwd                // 현재 나의 위치
+mkdir 폴더명        // 현재 위치에 새로운 폴더 생성
+cp file1 file2     // file1과 같은 내용의 fil12를 생성(확장자 쓰기)
+git                // 사용할 수 있는 명령어 표시
+ls -al             // 현재 디렉토리의 파일 목록 출력
 cat 파일명.확장자   // 선택한 파일의 내용을 출력
-명령어 --help   // 해당 명령어에 대한 메뉴얼을 보여줌
+명령어 --help      // 해당 명령어에 대한 메뉴얼을 보여줌
 ```
 ---
 ## Fork한 repository 최신으로 동기화
