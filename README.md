@@ -7,9 +7,10 @@ git init --bare 저장소이름   // 수정없이 저장만 할 저장소 생성
 ```
 #### remote저장소 생성
 ```
-git remote add origin '저장소주소'   // 해당 주소로 연결되는 origin이라는 이름의 remote저장소 생성
-git remote                          // 현재 프로젝트에 등록된 remote저장소 목록을 보여줌
-git remote -v                       // remote저장소 목록을 ULR과 함께 보여줌
+git remote add origin '저장소주소'              // 해당 주소로 연결되는 origin이라는 이름의 remote저장소 생성
+git remote                                     // 현재 프로젝트에 등록된 remote저장소 목록을 보여줌
+git remote -v                                  // remote저장소 목록을 ULR과 함께 보여줌
+git remote set-url 저장소이름 새로운저장소주소   // remote저장소의 url
 ```
 ## status
 #### 현재 파일들의 상태 출력
