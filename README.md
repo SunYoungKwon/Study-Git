@@ -8,8 +8,8 @@ git init --bare 저장소이름   // 수정없이 저장만 할 저장소 생성
 #### remote저장소 생성
 ```
 git remote add origin '저장소주소'   // 해당 주소로 연결되는 origin이라는 이름의 remote저장소 생성
-git remote   // 현재 프로젝트에 등록된 remote저장소 목록을 보여줌
-git remote -v   // remote저장소 목록을 ULR과 함께 보여줌
+git remote                          // 현재 프로젝트에 등록된 remote저장소 목록을 보여줌
+git remote -v                       // remote저장소 목록을 ULR과 함께 보여줌
 ```
 ## status
 #### 현재 파일들의 상태 출력
@@ -23,22 +23,22 @@ git status
   + Changes not staged for commit: commit되지 않을 것
 ## log
 ```
-git log                              // 현재까지 commit한 내용 출력
-git log -p                           // 각 commit사이의 소스코드상의 변경사항을 함께 출력
-git log diff commitID1..commitID2    // commitID1과 commitID2사이의 변경사항 출력
-git log --branch                     // 모든 브랜치를 표현
-git log --graph                      // 그래프로 표현 
+git log                               // 현재까지 commit한 내용 출력
+git log -p                            // 각 commit사이의 소스코드상의 변경사항을 함께 출력
+git log diff commitID1..commitID2     // commitID1과 commitID2사이의 변경사항 출력
+git log --branch                      // 모든 브랜치를 표현
+git log --graph                       // 그래프로 표현 
 ```
 ## add
 #### 파일을 add하기
 ```
 git add 'File'
-git add *      // 모든 파일을 add
-git add -u     // modified & deleted 파일만 add
+git add *        // 모든 파일을 add
+git add -u       // modified & deleted 파일만 add
 ```
 #### add 취소하기
 ```
-git reset   // 모든 파일의 add를 취소
+git reset           // 모든 파일의 add를 취소
 git reset 'File'
 ```
 ## commit
@@ -61,7 +61,7 @@ git revert 버전아이디         // 버전아이디 커밋을 취소한 내용
 3. Github에 생성한 ropository주소로 remote저장소 생성
 ```
 git remote add origin 'repository주소'
-git remote     // 확인
+git remote      // 확인
 ```
 4. 작업물 push
 ```
@@ -117,7 +117,7 @@ cat 파일명.확장자   // 선택한 파일의 내용을 출력
 1. 원본 repository를 remote저장소로 추가
 ```
 git remote add upstream '원본 저장소 주소'
-git remote -v   // 확인
+git remote -v      // 확인
 ```
 2. upstream으로부터 최신 업데이트 가져오기
 ```
@@ -125,7 +125,7 @@ git fetch upstream
 ```
 3. upstream의 master branch로부터 나의 local master branch로 merge
 ```
-git checkout master   // local master branch로 이동
+git checkout master          // local master branch로 이동
 git merge upstream/master
 ```
 4. push하여 origin remote repository에 적용
