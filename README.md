@@ -33,7 +33,8 @@ git log --graph                      // 그래프로 표현
 #### 파일을 add하기
 ```
 git add 'File'
-git add *   // 모든 파일을 add
+git add *      // 모든 파일을 add
+git add -u     // modified & deleted 파일만 add
 ```
 #### add 취소하기
 ```
@@ -44,7 +45,7 @@ git reset 'File'
 #### commit하기
 ```
 git commit
-git commit -a                    // 수정하거나 삭제한 파일을 자동으로 add하고 commit
+git commit -a                    // modified & deleted 파일을 자동으로 add하고 commit
 git commit -m 'commit message'   // 에디처를 거치지않고 바로 commit메세지 작성
 ```
 #### commit 취소 하기
