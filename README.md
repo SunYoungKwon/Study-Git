@@ -30,6 +30,10 @@ git log diff commitID1..commitID2     // commitID1과 commitID2사이의 변경�
 git log --branch                      // 모든 브랜치를 표현
 git log --graph                       // 그래프로 표현 
 ```
+## diff
+```
+git diff    // modified 상태가 되며 수정된 요소가 무엇인지 출력
+```
 ## add
 #### 파일을 add하기
 ```
