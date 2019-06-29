@@ -29,6 +29,7 @@ git log -p                            // 각 commit사이의 소스코드상의 
 git log diff commitID1..commitID2     // commitID1과 commitID2사이의 변경사항 출력
 git log --branch                      // 모든 브랜치를 표현
 git log --graph                       // 그래프로 표현 
+git log -1                            // 최근 1개의 log만 표시
 ```
 ## diff
 ```
@@ -58,6 +59,11 @@ git commit -m 'commit message'   // 에디처를 거치지않고 바로 commit�
 git reset 버전아이디 --hard   // 작성한 commit아이디 상태로 돌아가고 그 이후의 버전은 버림
 git revert 버전아이디         // 버전아이디 커밋을 취소한 내용을 새로운 버전으로 만듦
 * push후에는 commit내용을 건드리지 말 것
+```
+#### commit 메세지 변경하기
+```
+git commit --amend -m '새로운 메세지'   // 바로 직전의 commit 메세지를 변경
+* push전에 할 것
 ```
 ## push
 #### Github에 작업물 push
