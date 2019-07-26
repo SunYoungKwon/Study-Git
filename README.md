@@ -47,6 +47,11 @@ git add -u       // modified & deleted 파일만 add
 git reset           // 모든 파일의 add를 취소
 git reset 'File'
 ```
+## rm
+```
+git rm 'File'           // 파일을 삭제 푸 staged상태로 변경(work directory의 파일도 삭제)
+git rm --cached 'File'  // 파일을 untracked상태로 변경(work directory의 파일은 그대로 유지)
+```
 ## commit
 #### commit하기
 ```
@@ -90,7 +95,7 @@ git branch     // 현재 브랜치목록을 보여줌
 #### branch 생성, 전환, 삭제
 ```
 git branch nameOfBranch
-git checkout master
+git checkout master            // master브랜치로 이동
 git branch -d nameOfBranch     // 현재 위치가 삭제할 브랜치여서는 안됨
 git branch -D nameOfBranch     // 병합하지 않은 브랜치를 강제 삭제
 
