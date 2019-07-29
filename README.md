@@ -49,7 +49,7 @@ git reset 'File'
 ```
 ## rm
 ```
-git rm 'File'           // 파일을 삭제 푸 staged상태로 변경(work directory의 파일도 삭제)
+git rm 'File'           // 파일을 삭제 후 staged상태로 변경(work directory의 파일도 삭제)
 git rm --cached 'File'  // 파일을 untracked상태로 변경(work directory의 파일은 그대로 유지)
 ```
 ## commit
@@ -69,6 +69,11 @@ git revert 버전아이디         // 버전아이디 커밋을 취소한 내용
 ```
 git commit --amend -m '새로운 메세지'   // 바로 직전의 commit 메세지를 변경
 * push전에 할 것
+```
+## checkout
+```
+git checkout HEAD~1             // 현재 위치에서 1단계 전 commit으로 돌아가기
+git checkout 'name of branch'   // 해당 브랜치로 이동
 ```
 ## push
 #### Github에 작업물 push
