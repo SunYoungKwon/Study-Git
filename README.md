@@ -104,7 +104,7 @@ git checkout master            // master브랜치로 이동
 git branch -d nameOfBranch     // 현재 위치가 삭제할 브랜치여서는 안됨
 git branch -D nameOfBranch     // 병합하지 않은 브랜치를 강제 삭제
 
-git checkout -b nameOfBranch   // 새로운 브랜치를 생성하고 생성되 브랜치로 전환
+git checkout -b nameOfBranch   // 새로운 브랜치를 생성하고 생성 브랜치로 전환
 ```
 #### merge branch
 ```
