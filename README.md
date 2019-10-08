@@ -1,7 +1,23 @@
 # Study Git
+
+## congif
+#### 초기설정
+```
+git config --global user.name 'name'          // --global로 설정된 값은 한번만 설정하면 된다
+git config --global user.email 'gthub email'  // 매번 다른 이름과 메일주소를 사용할 것이라면 --global 안써도 됨
+```
+#### 설정확인 / 삭제
+```
+git config --list     // 현재 git 설정을 출력
+
+git config --unset user.name              // 설정된 user.name 삭제
+git config --unset --global user.email    // --global로 설정된 user.email 삭제
+```
+
 ## 저장소 생성
 #### 저장소 생성
 ```
+// 먼저 저장소를 만들 위치로 이동
 git init
 git init --bare 저장소이름   // 수정없이 저장만 할 저장소 생성, 
 ```
@@ -12,6 +28,7 @@ git remote                                     // 현재 프로젝트에 등록�
 git remote -v                                  // remote저장소 목록을 ULR과 함께 보여줌
 git remote set-url 저장소이름 새로운저장소주소   // remote저장소의 url주소 
 ```
+
 ## status
 #### 현재 파일들의 상태 출력
 ```
@@ -22,6 +39,7 @@ git status
 - modified: 수정된 것
   + Changes to be commited: commit될 것
   + Changes not staged for commit: commit되지 않을 것
+
 ## log
 ```
 git log                               // 현재까지 commit한 내용 출력
@@ -31,10 +49,12 @@ git log --branch                      // 모든 브랜치를 표현
 git log --graph                       // 그래프로 표현 
 git log -1                            // 최근 1개의 log만 표시
 ```
+
 ## diff
 ```
 git diff    // modified 상태가 되며 수정된 요소가 무엇인지 출력
 ```
+
 ## add
 #### 파일을 add하기
 ```
@@ -47,11 +67,13 @@ git add -u       // modified & deleted 파일만 add
 git reset           // 모든 파일의 add를 취소
 git reset 'File'
 ```
+
 ## rm
 ```
 git rm 'File'           // 파일을 삭제 후 staged상태로 변경(work directory의 파일도 삭제)
 git rm --cached 'File'  // 파일을 untracked상태로 변경(work directory의 파일은 그대로 유지)
 ```
+
 ## commit
 #### commit하기
 ```
@@ -70,11 +92,13 @@ git revert 버전아이디         // 버전아이디 커밋을 취소한 내용
 git commit --amend -m '새로운 메세지'   // 바로 직전의 commit 메세지를 변경
 * push전에 할 것
 ```
+
 ## checkout
 ```
 git checkout HEAD~1             // 현재 위치에서 1단계 전 commit으로 돌아가기
 git checkout 'name of branch'   // 해당 브랜치로 이동
 ```
+
 ## push
 #### Github에 작업물 push
 1. Github에 repository생성
@@ -86,13 +110,16 @@ git remote      // 확인
 ```
 4. 작업물 push
 ```
-git push -u origin master     // local저장소의 브랜치와 원격저장소의 master브랜치 연결. 다음부터 git push만 하면 됨.
+git push -u origin master     // local저장소의 브랜치와 원격저장소의 master브랜치 연결
+                              // 다음부터 git push만 하면 됨
 ```
+
 ## pull
 #### update내용을 local로 가져오기
 ```
 git pull
 ```
+
 ## branch
 ```
 git branch     // 현재 브랜치목록을 보여줌
@@ -123,6 +150,7 @@ gir merge branch2       // branch2를 branch1(현재 위치한 브랜치)에 mer
 >>>>>>> branch   // merge하려던 브랜치
 ```
 4. git add '충돌파일명'
+
 ## etc
 ```
 pwd                // 현재 나의 위치
@@ -133,7 +161,9 @@ ls -al             // 현재 디렉토리의 파일 목록 출력
 cat 파일명.확장자   // 선택한 파일의 내용을 출력
 명령어 --help      // 해당 명령어에 대한 메뉴얼을 보여줌
 ```
+
 ---
+
 ## Fork한 repository 최신으로 동기화
 1. 원본 repository를 remote저장소로 추가
 ```
