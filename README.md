@@ -35,6 +35,7 @@ git remote set-url 저장소이름 새로운저장소주소   // remote저장소
 #### 현재 파일들의 상태 출력
 ```
 git status
+git checkout -- 'file'    // 해당 파일이 modified되기 전 상태로 되돌리기
 ```
 - Untracked file: add되기 전. git의 추적을 받지 않는 파일
 
