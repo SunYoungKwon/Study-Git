@@ -3,7 +3,7 @@
 ## congif
 #### 초기설정
 ```
-git config --global user.name 'name'          // --global로 설정된 값은 한번만 설정하면 된다
+git config --global user.name 'name'          // --global로 설정된 값은 처음 한 번만 설정
 git config --global user.email 'gthub email'  // 매번 다른 이름과 메일주소를 사용할 것이라면 --global 안써도 됨
 ```
 #### 설정확인 / 삭제
@@ -20,7 +20,7 @@ git config --unset --global user.email    // --global로 설정된 user.email �
 ```
 // 먼저 저장소를 만들 위치로 이동
 git init
-git init --bare 저장소이름   // 수정없이 저장만 할 저장소 생성, 
+git init --bare 저장소이름   // 수정없이 저장만 할 저장소 생성
 ```
 #### remote저장소 생성
 ```
@@ -88,12 +88,12 @@ git rm --cached 'File'  // 파일을 untracked상태로 변경(work directory의
 ```
 git commit
 git commit -a                    // modified & deleted 파일을 자동으로 add하고 commit
-git commit -m 'commit message'   // 에디처를 거치지않고 바로 commit메세지 작성
+git commit -m 'commit message'   // 에디터를 거치지않고 바로 commit메세지 작성
 ```
 #### commit 취소 하기
 ```
 git reset 버전아이디 --hard   // 작성한 commit아이디 상태로 돌아가고 그 이후의 버전은 버림
-git reset --hard HEAD^       // 마지막 커밋 바로 이전으로 돌아가고 마비박 커밋은 버림
+git reset --hard HEAD^       // 마지막 커밋 바로 이전으로 돌아가고 마지막 커밋은 버림
 git reset HEAD^              // 마지막 커밋을 취소하고 내용은 남김채 unstaged 상태로 만들기
 git reset --soft HEAD^       // 마지막 커밋을 취소하고 내용은 남김채 staged 상태로 만들기
 
