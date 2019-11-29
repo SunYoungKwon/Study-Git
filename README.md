@@ -6,6 +6,7 @@
 git config --global user.name 'name'          // --global로 설정된 값은 처음 한 번만 설정
 git config --global user.email 'gthub email'  // 매번 다른 이름과 메일주소를 사용할 것이라면 --global 안써도 됨
 ```
+  
 #### 설정확인 / 삭제
 ```
 git config --list     // 현재 git 설정을 출력
@@ -22,6 +23,7 @@ git config --unset --global user.email    // --global로 설정된 user.email �
 git init
 git init --bare 저장소이름   // 수정없이 저장만 할 저장소 생성
 ```
+  
 #### remote저장소 생성
 ```
 git remote add origin '저장소주소'              // 해당 주소로 연결되는 origin이라는 이름의 remote저장소 생성
@@ -67,6 +69,7 @@ git add 'File'
 git add *        // 모든 파일을 add
 git add -u       // modified & deleted 파일만 add
 ```
+  
 #### add 취소하기
 ```
 git reset           // 모든 파일의 add를 취소
@@ -90,6 +93,7 @@ git commit
 git commit -a                    // modified & deleted 파일을 자동으로 add하고 commit
 git commit -m 'commit message'   // 에디터를 거치지않고 바로 commit메세지 작성
 ```
+  
 #### commit 취소 하기
 ```
 git reset 버전아이디 --hard   // 작성한 commit아이디 상태로 돌아가고 그 이후의 버전은 버림
@@ -100,6 +104,7 @@ git reset --soft HEAD^       // 마지막 커밋을 취소하고 내용은 남�
 git revert 버전아이디         // 버전아이디 커밋을 취소한 내용을 새로운 버전으로 만듦
 * push후에는 commit내용을 건드리지 말 것
 ```
+  
 #### commit 메세지 변경하기
 ```
 git commit --amend -m '새로운 메세지'   // 바로 직전의 commit 메세지를 변경
@@ -141,12 +146,29 @@ git pull
 ```
 <br />
 
+## stash
+```
+git stash         // 새로운 stash 생성
+git stash save    // 새로운 stash 생성
+
+git stash list    // stash 목록 확인하기
+
+git stash apply                 // stash 적용하기
+git stash apply --index         // Staged상태로 stash 적용하기
+git stash apply 'stash name'    // stash 적용하기
+
+git stash drop                  // 가장 최근의 stash 
+git stash drop 'stash name'     // 해당 stash 제거
+```
+<br />
+
 ## branch
 ```
 git branch      // 현재 브랜치목록을 보여줌
 git branch -r   // 원격 저장소의 브랜치목록을 보여줌
 git branch -a   // 로컬, 원격 저장소의 브랜치 목록을 보여줌
 ```
+  
 #### branch 생성, 전환, 삭제
 ```
 git branch nameOfBranch
@@ -156,11 +178,13 @@ git branch -D nameOfBranch     // 병합하지 않은 브랜치를 강제 삭제
 
 git checkout -b nameOfBranch   // 새로운 브랜치를 생성하고 생성 브랜치로 전환
 ```
+  
 #### merge branch
 ```
 git checkout branch1    // branch1으로 이동
 gir merge branch2       // branch2를 branch1(현재 위치한 브랜치)에 merge
 ```
+  
 #### branch 충돌 해결
 1. CONFLICT 에러 발생
 2. git status로 충돌이 일어난 파일 확인
@@ -173,6 +197,7 @@ gir merge branch2       // branch2를 branch1(현재 위치한 브랜치)에 mer
 >>>>>>> branch   // merge하려던 브랜치
 ```
 4. git add '충돌파일명'
+  
 #### 원격 저장소의 branch 로컬로 가져오기
 ```
 git branch -r                    // 원격저장소의 브랜치목록 보기
