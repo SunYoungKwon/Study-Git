@@ -6,7 +6,7 @@
 git config --global user.name 'name'          // --global로 설정된 값은 처음 한 번만 설정
 git config --global user.email 'gthub email'  // 매번 다른 이름과 메일주소를 사용할 것이라면 --global 안써도 됨
 ```
-  
+
 #### 설정확인 / 삭제
 ```
 git config --list     // 현재 git 설정을 출력
@@ -23,7 +23,7 @@ git config --unset --global user.email    // --global로 설정된 user.email �
 git init
 git init --bare 저장소이름   // 수정없이 저장만 할 저장소 생성
 ```
-  
+
 #### remote저장소 생성
 ```
 git remote add origin '저장소주소'              // 해당 주소로 연결되는 origin이라는 이름의 remote저장소 생성
@@ -69,7 +69,7 @@ git add 'File'
 git add *        // 모든 파일을 add
 git add -u       // modified & deleted 파일만 add
 ```
-  
+
 #### add 취소하기
 ```
 git reset           // 모든 파일의 add를 취소
@@ -93,7 +93,7 @@ git commit
 git commit -a                    // modified & deleted 파일을 자동으로 add하고 commit
 git commit -m 'commit message'   // 에디터를 거치지않고 바로 commit메세지 작성
 ```
-  
+
 #### commit 취소 하기
 ```
 git reset 버전아이디 --hard   // 작성한 commit아이디 상태로 돌아가고 그 이후의 버전은 버림
@@ -104,7 +104,7 @@ git reset --soft HEAD^       // 마지막 커밋을 취소하고 내용은 남�
 git revert 버전아이디         // 버전아이디 커밋을 취소한 내용을 새로운 버전으로 만듦
 * push후에는 commit내용을 건드리지 말 것
 ```
-  
+
 #### commit 메세지 변경하기
 ```
 git commit --amend -m '새로운 메세지'   // 바로 직전의 commit 메세지를 변경
@@ -113,10 +113,14 @@ git commit --amend -m '새로운 메세지'   // 바로 직전의 commit 메세�
 <br />
 
 ## checkout
+#### 브랜치 이동
 ```
 git checkout HEAD~1             // 현재 위치에서 1단계 전 commit으로 돌아가기
 git checkout 'name of branch'   // 해당 브랜치로 이동
+```
 
+#### modified전 상태로 되돌리기
+```
 git checkout .            // (위치: repository_root_dir) 프로젝트 내 모든 파일을 modified되기 전 상태로 되돌리기
 git checkout 'dir'        // 해당 폴대 내 모든 파일을 modified되기 전 상태로 되돌리기
 git checkout -- 'file'    // 해당 파일이 modified되기 전 상태로 되돌리기
@@ -140,9 +144,8 @@ git push -u origin master     // local저장소의 브랜치와 원격저장소�
 <br />
 
 ## pull
-#### update내용을 local로 가져오기
 ```
-git pull
+git pull    // update내용을 local로 가져오기
 ```
 <br />
 
