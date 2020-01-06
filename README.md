@@ -102,13 +102,16 @@ git reset HEAD^              // 마지막 커밋을 취소하고 내용은 남�
 git reset --soft HEAD^       // 마지막 커밋을 취소하고 내용은 남김채 staged 상태로 만들기
 
 git revert 버전아이디         // 버전아이디 커밋을 취소한 내용을 새로운 버전으로 만듦
-* push후에는 commit내용을 건드리지 말 것
+* 반드시 push전에 할 것
 ```
 
-#### commit 메세지 변경하기
+#### 마지막 commit 수정하기
 ```
+git commit --amend      // 편집기에서 새로운 커밋메세지 작성 후 반영
+                        // 파일 수정 후 add하여 실행할 시 해당 파일의 수정사항을 마지막 커밋에 추가
+git commit --amend --no-edit    // 커밋 메세지 수정없이 커밋 내용 반영
 git commit --amend -m '새로운 메세지'   // 바로 직전의 commit 메세지를 변경
-* push전에 할 것
+* 반드시 push전에 할 것
 ```
 <br />
 
@@ -193,19 +196,15 @@ git cherry-pick commitID
 
 #### merge branch
 - commit ID가 보존됨
-- 작업한 Branch를 push하고 추후 Main에 반영하는 경우 주로 사용
-- 나중에 추가작업을 할 경우나 규모가 큰 Topic에 사용
 ```
 git checkout branch1          // branch1으로 이동
 git merge branch2             // branch2를 branch1(현재 위치한 브랜치)에 merge
-git merge --no--ff branch2    // 3-Way Merge 수행
+git merge --no-ff branch2     // 3-Way Merge 수행
 ```
 
 #### rebase branch
 - 여러개의 commit을 다룰 수 있음
 - 새로운 commit이 생성되므로 commit ID가 변경됨
-- 로컬에서 Main에 반영하고 push하는 경우 주로 사용
-- Hotfix와 같이 단기간에 끝나는 셩우 사용
 ```
 git rebase nameOfBranch   // 현재 branch와 대상 branch의 공통 조상부터 대상 branch의 최신 커밋까지
                           // 순서대로 하나씩 가져와 현재 branch에 붙임
@@ -215,7 +214,7 @@ git rebase -i HEAD~3      // 현재 branch의 HEAD로 부터 3개의 commit을 �
 #### branch 충돌 해결
 1. CONFLICT 에러 발생
 2. git status로 충돌이 일어난 파일 확인
-3. 출돌이 일어난 파일 수정
+3. 충돌이 일어난 파일 수정
 ```
 <<<<<<< HEAD     // 현재 브랜치
 내용1
