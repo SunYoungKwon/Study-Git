@@ -199,7 +199,11 @@ git cherry-pick commitID
 ```
 git checkout branch1          // branch1으로 이동
 git merge branch2             // branch2를 branch1(현재 위치한 브랜치)에 merge
+
 git merge --no-ff branch2     // 3-Way Merge 수행
+
+git merge --squash branch2    // branch2의 커밋을 하나로 합쳐서 merge
+                              // 이후 Staging Area에 올라온 파일을 커밋해줘야 함
 ```
 
 #### rebase branch
@@ -208,6 +212,7 @@ git merge --no-ff branch2     // 3-Way Merge 수행
 ```
 git rebase nameOfBranch   // 현재 branch와 대상 branch의 공통 조상부터 대상 branch의 최신 커밋까지
                           // 순서대로 하나씩 가져와 현재 branch에 붙임
+                          
 git rebase -i HEAD~3      // 현재 branch의 HEAD로 부터 3개의 commit을 편집
 ```
 
