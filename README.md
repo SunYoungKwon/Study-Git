@@ -87,6 +87,7 @@ git rm --cached 'File'  // 파일을 untracked상태로 변경(work directory의
 <br />
 
 ## commit
+[좋은 커밋 메세지 작성법](https://meetup.toast.com/posts/106)
 #### commit하기
 ```
 git commit
