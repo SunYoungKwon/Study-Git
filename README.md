@@ -1,13 +1,13 @@
 # Study Git
 
 ## congif
-#### 초기설정
+### 초기설정
 ```
 git config --global user.name 'name'          // --global로 설정된 값은 처음 한 번만 설정
 git config --global user.email 'gthub email'  // 매번 다른 이름과 메일주소를 사용할 것이라면 --global 안써도 됨
 ```
 
-#### 설정확인 / 삭제
+### 설정확인 / 삭제
 ```
 git config --list     // 현재 git 설정을 출력
 
@@ -17,14 +17,14 @@ git config --unset --global user.email    // --global로 설정된 user.email �
 <br />
 
 ## 저장소 생성
-#### 저장소 생성
+### 저장소 생성
 ```
 // 먼저 저장소를 만들 위치로 이동
 git init
 git init --bare 저장소이름   // 수정없이 저장만 할 저장소 생성
 ```
 
-#### remote저장소 생성
+### remote저장소 생성
 ```
 git remote add origin '저장소주소'              // 해당 주소로 연결되는 origin이라는 이름의 remote저장소 생성
 git remote                                     // 현재 프로젝트에 등록된 remote저장소 목록을 보여줌
@@ -34,7 +34,7 @@ git remote set-url 저장소이름 새로운저장소주소   // remote저장소
 <br />
 
 ## status
-#### 현재 파일들의 상태 출력
+### 현재 파일들의 상태 출력
 ```
 git status
 ```
@@ -63,14 +63,14 @@ git diff    // modified 상태가 되며 수정된 요소가 무엇인지 출력
 <br />
 
 ## add
-#### 파일을 add하기
+### 파일을 add하기
 ```
 git add 'File'
 git add *        // 모든 파일을 add
 git add -u       // modified & deleted 파일만 add
 ```
 
-#### add 취소하기
+### add 취소하기
 ```
 git reset           // 모든 파일의 add를 취소
 git reset 'File'    // 해당 파일을 unstaged상태로 변경
@@ -88,14 +88,14 @@ git rm --cached 'File'  // 파일을 untracked상태로 변경(work directory의
 
 ## commit
 [좋은 커밋 메세지 작성법](https://meetup.toast.com/posts/106)
-#### commit하기
+### commit하기
 ```
 git commit
 git commit -a                    // modified & deleted 파일을 자동으로 add하고 commit
 git commit -m 'commit message'   // 에디터를 거치지않고 바로 commit메세지 작성
 ```
 
-#### commit 취소 하기
+### commit 취소 하기
 ```
 git reset 버전아이디 --hard   // 작성한 commit아이디 상태로 돌아가고 그 이후의 버전은 버림
 git reset --hard HEAD^       // 마지막 커밋 바로 이전으로 돌아가고 마지막 커밋은 버림
@@ -106,7 +106,7 @@ git revert 버전아이디         // 버전아이디 커밋을 취소한 내용
 * 반드시 push전에 할 것
 ```
 
-#### 마지막 commit 수정하기
+### 마지막 commit 수정하기
 ```
 git commit --amend      // 편집기에서 새로운 커밋메세지 작성 후 반영
                         // 파일 수정 후 add하여 실행할 시 해당 파일의 수정사항을 마지막 커밋에 추가
@@ -117,13 +117,13 @@ git commit --amend -m '새로운 메세지'   // 바로 직전의 commit 메세�
 <br />
 
 ## checkout
-#### 브랜치 이동
+### 브랜치 이동
 ```
 git checkout HEAD~1             // 현재 위치에서 1단계 전 commit으로 돌아가기
 git checkout 'name of branch'   // 해당 브랜치로 이동
 ```
 
-#### modified전 상태로 되돌리기
+### modified전 상태로 되돌리기
 ```
 git checkout .            // (위치: repository_root_dir) 프로젝트 내 모든 파일을 modified되기 전 상태로 되돌리기
 git checkout 'dir'        // 해당 폴대 내 모든 파일을 modified되기 전 상태로 되돌리기
@@ -132,7 +132,7 @@ git checkout -- 'file'    // 해당 파일이 modified되기 전 상태로 되�
 <br />
 
 ## push
-#### Github에 작업물 push
+### Github에 작업물 push
 1. Github에 repository생성
 2. 작업 후 commit
 3. Github에 생성한 ropository주소로 remote저장소 생성
@@ -178,7 +178,7 @@ git branch -r   // 원격 저장소의 브랜치목록을 보여줌
 git branch -a   // 로컬, 원격 저장소의 브랜치 목록을 보여줌
 ```
   
-#### branch 생성, 전환, 삭제
+### branch 생성, 전환, 삭제
 ```
 git branch nameOfBranch
 git checkout master            // master브랜치로 이동
@@ -189,14 +189,14 @@ git push origin --delete nameOfbranch   // 리모트 저장소의 브랜치
 git checkout -b nameOfBranch   // 새로운 브랜치를 생성하고 생성 브랜치로 전환
 ```
 
-#### cherry-pick
+### cherry-pick
 - 다른 branch에 있는 commit을 선별적으로 현재 branch에 반영
 - 가져올 commit과 같은 commit을 만들어 현재 branch에 덧붙임
 ```
 git cherry-pick commitID
 ```
 
-#### merge branch
+### merge branch
 - commit ID가 보존됨
 ```
 git checkout branch1          // branch1으로 이동
@@ -208,7 +208,7 @@ git merge --squash branch2    // branch2의 커밋을 하나로 합쳐서 merge
                               // 이후 Staging Area에 올라온 파일을 커밋해줘야 함
 ```
 
-#### rebase branch
+### rebase branch
 - 여러개의 commit을 다룰 수 있음
 - 새로운 commit이 생성되므로 commit ID가 변경됨
 ```
@@ -218,7 +218,7 @@ git rebase nameOfBranch   // 현재 branch와 대상 branch의 공통 조상부�
 git rebase -i HEAD~3      // 현재 branch의 HEAD로 부터 3개의 commit을 편집
 ```
 
-#### branch 충돌 해결
+### branch 충돌 해결
 1. CONFLICT 에러 발생
 2. git status로 충돌이 일어난 파일 확인
 3. 충돌이 일어난 파일 수정
@@ -231,7 +231,7 @@ git rebase -i HEAD~3      // 현재 branch의 HEAD로 부터 3개의 commit을 �
 ```
 4. git add '충돌파일명'
   
-#### 원격 저장소의 branch 로컬로 가져오기
+### 원격 저장소의 branch 로컬로 가져오기
 ```
 git branch -r                    // 원격저장소의 브랜치목록 보기
   > origin/branch1               // '저장소명'/'브랜치명'
