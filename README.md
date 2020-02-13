@@ -112,7 +112,10 @@ git commit --amend      // 편집기에서 새로운 커밋메세지 작성 후 
                         // 파일 수정 후 add하여 실행할 시 해당 파일의 수정사항을 마지막 커밋에 추가
 git commit --amend --no-edit    // 커밋 메세지 수정없이 커밋 내용 반영
 git commit --amend -m '새로운 메세지'   // 바로 직전의 commit 메세지를 변경
-* 반드시 push전에 할 것
+
+git push -f // 수정 한 메세지 push하기
+
+* 다른 사람과 협업중인 공간에 push한 후 commit 수정은 권장하지 않음(충돌 위험 매우 큼)
 ```
 <br />
 
