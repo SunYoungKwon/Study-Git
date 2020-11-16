@@ -169,7 +169,7 @@ git stash apply 'stash name'    // stash 적용하기
 git stash drop                  // 가장 최근의 stash 
 git stash drop 'stash name'     // 해당 stash 제거
 
-git stash show -p | gir apply -R                // stash 되돌리기
+git stash show -p | git apply -R                // stash 되돌리기
 git stash show -p 'stash name'| git apply -R    // 해당 stash 되돌리기
 ```
 <br />
