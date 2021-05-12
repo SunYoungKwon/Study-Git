@@ -1,6 +1,6 @@
 # Study Git
 
-## congif
+## config
 ### 초기설정
 ```
 git config --global user.name 'name'          // --global로 설정된 값은 처음 한 번만 설정
