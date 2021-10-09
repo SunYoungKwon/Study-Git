@@ -198,6 +198,8 @@ git branch -m oldName newName  // local에서 브랜치 이름 변경
 - 가져올 commit과 같은 commit을 만들어 현재 branch에 덧붙임
 ```
 git cherry-pick commitID
+git cherry-pick startCommitID..endCommitID    // 연속된 여러 커밋 가져오기(startCommitID에 해당하는 커밋은 미포함)
+git cherry-pick startCommitID^..endCommitID   // 연속된 여러 커밋 가져오기(startCommitID에 해당하는 커밋 포함)
 ```
 
 ### merge branch
